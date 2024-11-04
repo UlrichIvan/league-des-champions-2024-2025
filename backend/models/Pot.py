@@ -3,9 +3,6 @@ from backend.models.Team import Team
 
 
 class Pot:
-    id: int
-    teams: List[Team]
-
     # instance attribute
     def __init__(self, id: str, teams: List[Team]) -> None:
         self.id = id

@@ -1,6 +1,6 @@
 from typing import List, Dict
 from backend.models.Pot import Pot
-from random import shuffle, randint
+from random import shuffle
 from utils import HOME, AWAY
 from backend.models.Team import Team
 from backend.models.Pot import Pot
@@ -107,6 +107,31 @@ class Draw:
                     )
 
                     pot.remove(t=team)
+                    self.removeTeam(team, self.noFree)
+
+                else:
+                    if not self.contains(team, self.noFree):
+                        self.noFree.append(
+                            {
+                                "name": team.name,
+                                "matches": len(team.tracking),
+                                "pot": team.pot,
+                                "country": team.country,
+                            }
+                        )
+
+    def removeTeam(self, team: Team, teams: list) -> None:
+        for i, t in enumerate(teams):
+            if team.name == t["name"]:
+                teams.pop(i)
+                break
+
+    def contains(self, team: Team, teams: list) -> bool:
+        found = False
+        for t in teams:
+            if team.name == t["name"]:
+                found = True
+        return found
 
     def mathes_not_complete(self) -> bool:
         count = 0
@@ -118,8 +143,13 @@ class Draw:
     # methods Objects
     def make_draw(self):
         while self.mathes_not_complete():
+            self.random_teams()
             self.set_matches()
 
         print("finish!")
 
-    # while self.mathes_not_complete():
+    def random_teams(self) -> None:
+        for pot in self.pots:
+            teams = pot.teams
+            shuffle(teams)
+            pot.teams = teams
