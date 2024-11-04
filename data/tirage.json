@@ -1,0 +1,2378 @@
+{
+    "Manchester City": {
+        "pot_1": {
+            "home": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            },
+            "away": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            },
+            "away": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            },
+            "away": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            },
+            "away": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            }
+        }
+    },
+    "Bayern Munich": {
+        "pot_1": {
+            "home": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            },
+            "away": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            },
+            "away": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            },
+            "away": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            },
+            "away": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            }
+        }
+    },
+    "Real Madrid": {
+        "pot_1": {
+            "home": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            },
+            "away": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            },
+            "away": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            },
+            "away": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            },
+            "away": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            }
+        }
+    },
+    "PSG": {
+        "pot_1": {
+            "home": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            },
+            "away": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            },
+            "away": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            },
+            "away": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            },
+            "away": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            }
+        }
+    },
+    "Liverpool": {
+        "pot_1": {
+            "home": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            },
+            "away": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            },
+            "away": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            },
+            "away": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            },
+            "away": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            }
+        }
+    },
+    "Inter Milan": {
+        "pot_1": {
+            "home": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            },
+            "away": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            },
+            "away": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            },
+            "away": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            },
+            "away": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            }
+        }
+    },
+    "Borussia Dortmund": {
+        "pot_1": {
+            "home": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            },
+            "away": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            },
+            "away": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            },
+            "away": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            },
+            "away": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            }
+        }
+    },
+    "RB Leipzig": {
+        "pot_1": {
+            "home": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            },
+            "away": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            },
+            "away": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            },
+            "away": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            },
+            "away": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            }
+        }
+    },
+    "FC Barcelone": {
+        "pot_1": {
+            "home": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            },
+            "away": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            },
+            "away": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            },
+            "away": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            },
+            "away": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            }
+        }
+    },
+    "Bayer Leverkusen": {
+        "pot_1": {
+            "home": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            },
+            "away": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            },
+            "away": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            },
+            "away": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            },
+            "away": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            }
+        }
+    },
+    "Atlético de Madrid": {
+        "pot_1": {
+            "home": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            },
+            "away": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            },
+            "away": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            },
+            "away": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            },
+            "away": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            }
+        }
+    },
+    "Atalanta Bergame": {
+        "pot_1": {
+            "home": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            },
+            "away": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            },
+            "away": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            },
+            "away": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            },
+            "away": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            }
+        }
+    },
+    "Juventus Turin": {
+        "pot_1": {
+            "home": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            },
+            "away": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            },
+            "away": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            },
+            "away": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            },
+            "away": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            }
+        }
+    },
+    "Benfica Lisbonne": {
+        "pot_1": {
+            "home": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            },
+            "away": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            },
+            "away": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            },
+            "away": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            },
+            "away": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            }
+        }
+    },
+    "Arsenal": {
+        "pot_1": {
+            "home": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            },
+            "away": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            },
+            "away": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            },
+            "away": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            },
+            "away": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            }
+        }
+    },
+    "Club Bruges": {
+        "pot_1": {
+            "home": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            },
+            "away": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            },
+            "away": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            },
+            "away": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            },
+            "away": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            }
+        }
+    },
+    "Shakhtar Donetsk": {
+        "pot_1": {
+            "home": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            },
+            "away": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            },
+            "away": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            },
+            "away": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            },
+            "away": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            }
+        }
+    },
+    "AC Milan": {
+        "pot_1": {
+            "home": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            },
+            "away": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            },
+            "away": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            },
+            "away": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            },
+            "away": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            }
+        }
+    },
+    "Feyenoord Rotterdam": {
+        "pot_1": {
+            "home": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            },
+            "away": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            },
+            "away": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            },
+            "away": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            },
+            "away": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            }
+        }
+    },
+    "Sporting Portugal": {
+        "pot_1": {
+            "home": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            },
+            "away": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            },
+            "away": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            },
+            "away": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            },
+            "away": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            }
+        }
+    },
+    "PSV Eindhoven": {
+        "pot_1": {
+            "home": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            },
+            "away": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            },
+            "away": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            },
+            "away": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            },
+            "away": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            }
+        }
+    },
+    "Dinamo Zagreb": {
+        "pot_1": {
+            "home": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            },
+            "away": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            },
+            "away": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            },
+            "away": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            },
+            "away": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            }
+        }
+    },
+    "RB Salzbourg": {
+        "pot_1": {
+            "home": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            },
+            "away": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            },
+            "away": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            },
+            "away": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            },
+            "away": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            }
+        }
+    },
+    "Lille": {
+        "pot_1": {
+            "home": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            },
+            "away": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            },
+            "away": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            },
+            "away": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            },
+            "away": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            }
+        }
+    },
+    "Étoile Rouge de Belgrade": {
+        "pot_1": {
+            "home": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            },
+            "away": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            },
+            "away": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            },
+            "away": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            },
+            "away": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            }
+        }
+    },
+    "Young Boys": {
+        "pot_1": {
+            "home": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            },
+            "away": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            },
+            "away": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            },
+            "away": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            },
+            "away": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            }
+        }
+    },
+    "Celtic": {
+        "pot_1": {
+            "home": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            },
+            "away": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            },
+            "away": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            },
+            "away": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            },
+            "away": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            }
+        }
+    },
+    "Slovan Bratislava": {
+        "pot_1": {
+            "home": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            },
+            "away": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            },
+            "away": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            },
+            "away": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            },
+            "away": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            }
+        }
+    },
+    "AS Monaco": {
+        "pot_1": {
+            "home": {
+                "nom": "Inter Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 1,
+                "logo": "FC_Internazionale.png"
+            },
+            "away": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            },
+            "away": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            },
+            "away": {
+                "nom": "Feyenoord Rotterdam",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "Feyenoord_Rotterdam.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            },
+            "away": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            }
+        }
+    },
+    "Sparta Prague": {
+        "pot_1": {
+            "home": {
+                "nom": "FC Barcelone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Logo_FC_Barcelona.png"
+            },
+            "away": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atalanta Bergame",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Atalanta_Bergame.png"
+            },
+            "away": {
+                "nom": "Club Bruges",
+                "pays": "Belgique",
+                "championnat": "Jupiler Pro League",
+                "chapeau": 2,
+                "logo": "Club_Brugge.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            },
+            "away": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "AS Monaco",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "AS_Monaco.png"
+            },
+            "away": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            }
+        }
+    },
+    "Aston Villa": {
+        "pot_1": {
+            "home": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            },
+            "away": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            },
+            "away": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            },
+            "away": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            },
+            "away": {
+                "nom": "Bologne",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 4,
+                "logo": "Bologna_FC.png"
+            }
+        }
+    },
+    "Bologne": {
+        "pot_1": {
+            "home": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            },
+            "away": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            },
+            "away": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            },
+            "away": {
+                "nom": "Young Boys",
+                "pays": "Suisse",
+                "championnat": "Super League",
+                "chapeau": 3,
+                "logo": "Young_Boys.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            },
+            "away": {
+                "nom": "Slovan Bratislava",
+                "pays": "Slovaquie",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "Slovan_Bratislava.png"
+            }
+        }
+    },
+    "Gérone": {
+        "pot_1": {
+            "home": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            },
+            "away": {
+                "nom": "Borussia Dortmund",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "Borussia_Dortmund.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Bayer Leverkusen",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 2,
+                "logo": "Bayer_04_Leverkusen.png"
+            },
+            "away": {
+                "nom": "Benfica Lisbonne",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 2,
+                "logo": "SLB.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Dinamo Zagreb",
+                "pays": "Croatie",
+                "championnat": "Prva HNL",
+                "chapeau": 3,
+                "logo": "Dinamo_Zagreb.png"
+            },
+            "away": {
+                "nom": "Lille",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 3,
+                "logo": "LOSC_Lille.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Sparta Prague",
+                "pays": "République Tchèque",
+                "championnat": "Fortuna Liga",
+                "chapeau": 4,
+                "logo": "AC-Sparta.png"
+            },
+            "away": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            }
+        }
+    },
+    "Stuttgart": {
+        "pot_1": {
+            "home": {
+                "nom": "PSG",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 1,
+                "logo": "Paris_Saint-Germain.png"
+            },
+            "away": {
+                "nom": "Liverpool",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "liverpool.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Atlético de Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 2,
+                "logo": "Logo_Atletico.png"
+            },
+            "away": {
+                "nom": "Shakhtar Donetsk",
+                "pays": "Ukraine",
+                "championnat": "Premyer-Liha",
+                "chapeau": 2,
+                "logo": "FC_Shakhtar_Donetsk.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Celtic",
+                "pays": "Écosse",
+                "championnat": "Scottish Premiership",
+                "chapeau": 3,
+                "logo": "Celtic_fc.png"
+            },
+            "away": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Gérone",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 4,
+                "logo": "Logo_Girona_FC.png"
+            },
+            "away": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            }
+        }
+    },
+    "Sturm Graz": {
+        "pot_1": {
+            "home": {
+                "nom": "Real Madrid",
+                "pays": "Espagne",
+                "championnat": "La Liga",
+                "chapeau": 1,
+                "logo": "Real_madrid.png"
+            },
+            "away": {
+                "nom": "Manchester City",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 1,
+                "logo": "manchester-city.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "AC Milan",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "AC_Milan.png"
+            },
+            "away": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "Sporting Portugal",
+                "pays": "Portugal",
+                "championnat": "Primeira Liga",
+                "chapeau": 3,
+                "logo": "Sporting_Clube_Portugal.png"
+            },
+            "away": {
+                "nom": "PSV Eindhoven",
+                "pays": "Pays-Bas",
+                "championnat": "Eredivisie",
+                "chapeau": 3,
+                "logo": "psv_eindhoven.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stade Brestois",
+                "pays": "France",
+                "championnat": "Ligue 1",
+                "chapeau": 4,
+                "logo": "SB29.png"
+            },
+            "away": {
+                "nom": "Aston Villa",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 4,
+                "logo": "Aston_Villa.png"
+            }
+        }
+    },
+    "Stade Brestois": {
+        "pot_1": {
+            "home": {
+                "nom": "RB Leipzig",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "RB_Leipzig.png"
+            },
+            "away": {
+                "nom": "Bayern Munich",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 1,
+                "logo": "bayern_munich.png"
+            }
+        },
+        "pot_2": {
+            "home": {
+                "nom": "Arsenal",
+                "pays": "Angleterre",
+                "championnat": "Premier League",
+                "chapeau": 2,
+                "logo": "arsenal.png"
+            },
+            "away": {
+                "nom": "Juventus Turin",
+                "pays": "Italie",
+                "championnat": "Serie A",
+                "chapeau": 2,
+                "logo": "Juventus_FC.png"
+            }
+        },
+        "pot_3": {
+            "home": {
+                "nom": "RB Salzbourg",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 3,
+                "logo": "FC_Salzburg_logo.png"
+            },
+            "away": {
+                "nom": "Étoile Rouge de Belgrade",
+                "pays": "Serbie",
+                "championnat": "SuperLiga",
+                "chapeau": 3,
+                "logo": "crvena-zvezda.png"
+            }
+        },
+        "pot_4": {
+            "home": {
+                "nom": "Stuttgart",
+                "pays": "Allemagne",
+                "championnat": "Bundesliga",
+                "chapeau": 4,
+                "logo": "VfB_Stuttgart_1893.png"
+            },
+            "away": {
+                "nom": "Sturm Graz",
+                "pays": "Autriche",
+                "championnat": "Bundesliga Autrichienne",
+                "chapeau": 4,
+                "logo": "SK_Sturm_Graz.png"
+            }
+        }
+    }
+}

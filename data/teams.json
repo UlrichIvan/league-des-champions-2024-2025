@@ -1,0 +1,254 @@
+[
+    {
+        "nom": "Manchester City",
+        "pays": "Angleterre",
+        "championnat": "Premier League",
+        "chapeau": 1,
+        "logo": "manchester-city.png"
+    },
+    {
+        "nom": "Bayern Munich",
+        "pays": "Allemagne",
+        "championnat": "Bundesliga",
+        "chapeau": 1,
+        "logo":"bayern_munich.png"
+    },
+    {
+        "nom": "Real Madrid",
+        "pays": "Espagne",
+        "championnat": "La Liga",
+        "chapeau": 1,
+        "logo": "Real_madrid.png"
+    },
+    {
+        "nom": "PSG",
+        "pays": "France",
+        "championnat": "Ligue 1",
+        "chapeau": 1,
+        "logo": "Paris_Saint-Germain.png"
+    },
+    {
+        "nom": "Liverpool",
+        "pays": "Angleterre",
+        "championnat": "Premier League",
+        "chapeau": 1,
+        "logo": "liverpool.png"
+    },
+    {
+        "nom": "Inter Milan",
+        "pays": "Italie",
+        "championnat": "Serie A",
+        "chapeau": 1,
+        "logo": "FC_Internazionale.png"
+    },
+    {
+        "nom": "Borussia Dortmund",
+        "pays": "Allemagne",
+        "championnat": "Bundesliga",
+        "chapeau": 1,
+        "logo": "Borussia_Dortmund.png"
+    },
+    {
+        "nom": "RB Leipzig",
+        "pays": "Allemagne",
+        "championnat": "Bundesliga",
+        "chapeau": 1,
+        "logo": "RB_Leipzig.png"
+    },
+    {
+        "nom": "FC Barcelone",
+        "pays": "Espagne",
+        "championnat": "La Liga",
+        "chapeau": 1,
+        "logo": "Logo_FC_Barcelona.png"
+    },
+    {
+        "nom": "Bayer Leverkusen",
+        "pays": "Allemagne",
+        "championnat": "Bundesliga",
+        "chapeau": 2,
+        "logo": "Bayer_04_Leverkusen.png"
+    },
+    {
+        "nom": "Atlético de Madrid",
+        "pays": "Espagne",
+        "championnat": "La Liga",
+        "chapeau": 2,
+        "logo": "Logo_Atletico.png"
+    },
+    {
+        "nom": "Atalanta Bergame",
+        "pays": "Italie",
+        "championnat": "Serie A",
+        "chapeau": 2,
+        "logo": "Atalanta_Bergame.png"
+    },
+    {
+        "nom": "Juventus Turin",
+        "pays": "Italie",
+        "championnat": "Serie A",
+        "chapeau": 2,
+        "logo": "Juventus_FC.png"
+    },
+    {
+        "nom": "Benfica Lisbonne",
+        "pays": "Portugal",
+        "championnat": "Primeira Liga",
+        "chapeau": 2,
+        "logo": "SLB.png"
+    },
+    {
+        "nom": "Arsenal",
+        "pays": "Angleterre",
+        "championnat": "Premier League",
+        "chapeau": 2,
+        "logo": "arsenal.png"
+    },
+    {
+        "nom": "Club Bruges",
+        "pays": "Belgique",
+        "championnat": "Jupiler Pro League",
+        "chapeau": 2,
+        "logo": "Club_Brugge.png"
+    },
+    {
+        "nom": "Shakhtar Donetsk",
+        "pays": "Ukraine",
+        "championnat": "Premyer-Liha",
+        "chapeau": 2,
+        "logo": "FC_Shakhtar_Donetsk.png"
+    },
+    {
+        "nom": "AC Milan",
+        "pays": "Italie",
+        "championnat": "Serie A",
+        "chapeau": 2,
+        "logo": "AC_Milan.png"
+    },
+    {
+        "nom": "Feyenoord Rotterdam",
+        "pays": "Pays-Bas",
+        "championnat": "Eredivisie",
+        "chapeau": 3,
+        "logo": "Feyenoord_Rotterdam.png"
+    },
+    {
+        "nom": "Sporting Portugal",
+        "pays": "Portugal",
+        "championnat": "Primeira Liga",
+        "chapeau": 3,
+        "logo": "Sporting_Clube_Portugal.png"
+    },
+    {
+        "nom": "PSV Eindhoven",
+        "pays": "Pays-Bas",
+        "championnat": "Eredivisie",
+        "chapeau": 3,
+        "logo": "psv_eindhoven.png"
+    },
+    {
+        "nom": "Dinamo Zagreb",
+        "pays": "Croatie",
+        "championnat": "Prva HNL",
+        "chapeau": 3,
+        "logo": "Dinamo_Zagreb.png"
+    },
+    {
+        "nom": "RB Salzbourg",
+        "pays": "Autriche",
+        "championnat": "Bundesliga Autrichienne",
+        "chapeau": 3,
+        "logo": "FC_Salzburg_logo.png"
+    },
+    {
+        "nom": "Lille",
+        "pays": "France",
+        "championnat": "Ligue 1",
+        "chapeau": 3,
+        "logo": "LOSC_Lille.png"
+    },
+    {
+        "nom": "Étoile Rouge de Belgrade",
+        "pays": "Serbie",
+        "championnat": "SuperLiga",
+        "chapeau": 3,
+        "logo": "crvena-zvezda.png"
+    },
+    {
+        "nom": "Young Boys",
+        "pays": "Suisse",
+        "championnat": "Super League",
+        "chapeau": 3,
+        "logo": "Young_Boys.png"
+    },
+    {
+        "nom": "Celtic",
+        "pays": "Écosse",
+        "championnat": "Scottish Premiership",
+        "chapeau": 3,
+        "logo": "Celtic_fc.png"
+    },
+    {
+        "nom": "Slovan Bratislava",
+        "pays": "Slovaquie",
+        "championnat": "Fortuna Liga",
+        "chapeau": 4,
+        "logo": "Slovan_Bratislava.png"
+    },
+    {
+        "nom": "AS Monaco",
+        "pays": "France",
+        "championnat": "Ligue 1",
+        "chapeau": 4,
+        "logo": "AS_Monaco.png"
+    },
+    {
+        "nom": "Sparta Prague",
+        "pays": "République Tchèque",
+        "championnat": "Fortuna Liga",
+        "chapeau": 4,
+        "logo": "AC-Sparta.png"
+    },
+    {
+        "nom": "Aston Villa",
+        "pays": "Angleterre",
+        "championnat": "Premier League",
+        "chapeau": 4,
+        "logo": "Aston_Villa.png"
+    },
+    {
+        "nom": "Bologne",
+        "pays": "Italie",
+        "championnat": "Serie A",
+        "chapeau": 4,
+        "logo": "Bologna_FC.png"
+    },
+    {
+        "nom": "Gérone",
+        "pays": "Espagne",
+        "championnat": "La Liga",
+        "chapeau": 4,
+        "logo": "Logo_Girona_FC.png"
+    },
+    {
+        "nom": "Stuttgart",
+        "pays": "Allemagne",
+        "championnat": "Bundesliga",
+        "chapeau": 4,
+        "logo": "VfB_Stuttgart_1893.png"
+    },
+    {
+        "nom": "Sturm Graz",
+        "pays": "Autriche",
+        "championnat": "Bundesliga Autrichienne",
+        "chapeau": 4,
+        "logo": "SK_Sturm_Graz.png"
+    },
+    {
+        "nom": "Stade Brestois",
+        "pays": "France",
+        "championnat": "Ligue 1",
+        "chapeau": 4,
+        "logo": "SB29.png"
+    }
+]
