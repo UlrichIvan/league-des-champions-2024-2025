@@ -1,0 +1,6 @@
+venv
+*.pdf
+__pycache__
+.vscode
+samples.json
+analyse.txt
