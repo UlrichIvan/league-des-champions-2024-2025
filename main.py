@@ -1,18 +1,23 @@
 # Ce module contient les instances de vos classes back et front end.
-from backend.Draw import Draw
+# from backend.Draw import Draw
+from frontend.pdf import PDF
 
-from utils import teams_path_json, load_json
+pdf = PDF()
 
-# load teams from json file
-json_teams = load_json(teams_path_json)
+pdf.export()
 
-# order teams by pots
-dict_pots = Draw.sort_teams_by_pots(json_teams)
+# from utils import teams_path_json, load_json
 
-# get list of pot
-list_pots = Draw.get_list_of_pots(dict_pots)
+# # load teams from json file
+# json_teams = load_json(teams_path_json)
 
-draw = Draw(pots=list_pots)
+# # order teams by pots
+# dict_pots = Draw.sort_teams_by_pots(json_teams)
 
-draw.make_draw()
-draw
+# # get list of pot
+# list_pots = Draw.get_list_of_pots(dict_pots)
+
+# draw = Draw(pots=list_pots)
+
+# draw.make_draw()
+# draw

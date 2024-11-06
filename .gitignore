@@ -1,7 +1,8 @@
 venv
 *.pdf
-__pycache__
+*/__pycache__
 .vscode
 samples.json
 analyse.txt
 token
+__pycache__

@@ -1,12 +1,14 @@
 from typing import List, Dict
 from backend.models.Pot import Pot
-from random import shuffle
+from random import shuffle, randint
 from utils import HOME, AWAY
 from backend.models.Team import Team
 from backend.models.Pot import Pot
 
 
 class Draw:
+    all = []
+
     def __init__(self, pots: List[Pot]) -> None:
         self.__pots = pots
         self.__results = []
@@ -42,20 +44,27 @@ class Draw:
         pots = {1: [], 2: [], 3: [], 4: []}
 
         for team in teams:
-            pots[team["chapeau"]].append(
-                Team(
-                    name=team["nom"],
-                    country=team["pays"],
-                    pot=team["chapeau"],
-                    championship=team["championnat"],
-                    logo=team["logo"],
-                )
+            team = Team(
+                name=team["nom"],
+                country=team["pays"],
+                pot=team["chapeau"],
+                championship=team["championnat"],
+                logo=team["logo"],
             )
+            pots[team.pot].append(team)
+            Draw.all.append(team)
         return pots
 
     def set_matches(self) -> None:
-        for pot in self.pots:  # current pot
-            for team in pot.teams:  # current team from current pot
+        while len(Draw.all):
+            # get random pot
+            pot = self.pots[randint(0, len(self.pots) - 1)]
+
+            shuffle(pot.teams)
+
+            for i, team in enumerate(
+                pot.teams, start=0
+            ):  # current team from current pot
                 for other_pot in self.pots:  # others pots include current pot
                     teams_opp = [
                         team_opp
@@ -97,32 +106,12 @@ class Draw:
                                 continue
 
                 if len(team.tracking) == 8:
-                    self.results.append(
-                        {
-                            "name": team.name,
-                            "matches": len(team.tracking),
-                            "pot": team.pot,
-                            "country": team.country,
-                        }
-                    )
-
-                    pot.remove(t=team)
-                    self.removeTeam(team, self.noFree)
-
-                else:
-                    if not self.contains(team, self.noFree):
-                        self.noFree.append(
-                            {
-                                "name": team.name,
-                                "matches": len(team.tracking),
-                                "pot": team.pot,
-                                "country": team.country,
-                            }
-                        )
+                    self.results.append(team)
+                    self.removeTeam(team=team, teams=Draw.all)
 
     def removeTeam(self, team: Team, teams: list) -> None:
         for i, t in enumerate(teams):
-            if team.name == t["name"]:
+            if team.name == t.name:
                 teams.pop(i)
                 break
 
@@ -143,7 +132,6 @@ class Draw:
     # methods Objects
     def make_draw(self):
         while self.mathes_not_complete():
-            self.random_teams()
             self.set_matches()
 
         print("finish!")

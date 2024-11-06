@@ -5,16 +5,14 @@ from fpdf import FPDF
 class PDF(FPDF):
 
     def __init__(self):
-        # call super() function
         super().__init__()
 
+        self.add_page("P")
 
-pdf = PDF()
+        self.set_font("helvetica", "BU", 20)
 
-pdf.add_page("P")
+        self.cell(0, 0, "Résultats de la Ligue des champions 2024-2025", align="C")
 
-pdf.set_font("helvetica", "BU", 20)
-
-pdf.cell(0, 0, "Ligue des champions!", align="C")
-
-pdf.output("data/a.pdf")
+    def export(self) -> None:
+        self.output("data/tirages.pdf")
+        print("export done successfully!!!")
