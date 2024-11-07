@@ -1,10 +1,16 @@
 # Ce module contient les instances de vos classes back et front end.
 # from backend.Draw import Draw
 from frontend.pdf import PDF
+from utils import load_json
 
-pdf = PDF()
+# load samples success results from Draw
+json_tirages = load_json(path="data/tirage.json")
 
+pdf = PDF(tirages=json_tirages)
+
+pdf.generate()
 pdf.export()
+
 
 # from utils import teams_path_json, load_json
 
