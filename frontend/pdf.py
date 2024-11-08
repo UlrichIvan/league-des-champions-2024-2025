@@ -5,21 +5,29 @@ from utils import path
 # Créer une classe qui hérite de FPDF
 class PDF(FPDF):
 
-    def __init__(self, tirages: dict):
+    def __init__(self, tirages: dict, json_teams: list):
 
         super().__init__()
 
         self.__tirages = tirages
 
-        self.add_page("P")
+        self.__json_teams = json_teams
 
-    def header(self):
-        # Select Arial bold 15
-        self.set_font("helvetica", "Ib", 15)
+        self.per_page = 4
 
-        self.cell(0, 0, "Résults from champions league 2024-2025", align="C")
-
-        self.ln(20)
+        self.total_pages = (
+            int(len(tirages.keys()) / self.per_page)
+            if len(tirages.keys()) % self.per_page == 0
+            else int(len(tirages.keys()) / self.per_page) + 1
+        )
+        self.img_target_x = 3
+        self.cell_w = 15
+        self.cell_h = 38
+        self.img_w = self.img_h = 15
+        self.img_x = 10
+        self.img_y = 32
+        self.e = 10
+        self.border = 0
 
     @property
     def tirages(self) -> dict:
@@ -29,470 +37,122 @@ class PDF(FPDF):
     def tirages(self, value: dict) -> None:
         self.__tirages = value
 
+    @property
+    def json_teams(self) -> list:
+        return self.__json_teams
+
+    @json_teams.setter
+    def json_teams(self, value: list) -> None:
+        self.__json_teams = value
+
+    def get_logo(self, name: str) -> str | None:
+        logo = None
+        for club in self.json_teams:
+            if club["nom"] == name:
+                logo = club["logo"]
+                break
+        return logo
+
+    # methods
+
+    def footer(self):
+        # Select Arial bold 15
+        self.set_font("helvetica", "Ib", 15)
+        self.set_y(-25)
+        self.cell(
+            0,
+            0,
+            f"Résults from champions league 2024-2025 : page {self.page_no()}/{self.total_pages}",
+            align="C",
+            ln=1,
+        )
+        self.set_text_color(r=255, g=215, b=0)
+        self.set_y(-15)
+        self.cell(
+            0,
+            0,
+            f"made with love by :".capitalize() + "Ulrich/Amine/Alain",
+            align="C",
+            ln=1,
+        )
+
     def export(self) -> None:
         self.output("data/tirages.pdf")
-        print("export done successfully!!!")
+        print("draw done successfully!!!")
 
     def generate(self):
+
         if not len(self.tirages):
-            print("cannot generate PDF from empty tirage")
-
-        
-
-        self.tirages = {
-            "Manchester City": {
-                "pot_1": {
-                    "home": {
-                        "nom": "PSG",
-                        "pays": "France",
-                        "championnat": "Ligue 1",
-                        "chapeau": 1,
-                        "logo": "Paris_Saint-Germain.png",
-                    },
-                    "away": {
-                        "nom": "FC Barcelone",
-                        "pays": "Espagne",
-                        "championnat": "La Liga",
-                        "chapeau": 1,
-                        "logo": "Logo_FC_Barcelona.png",
-                    },
-                },
-                "pot_2": {
-                    "home": {
-                        "nom": "Club Bruges",
-                        "pays": "Belgique",
-                        "championnat": "Jupiler Pro League",
-                        "chapeau": 2,
-                        "logo": "Club_Brugge.png",
-                    },
-                    "away": {
-                        "nom": "Juventus Turin",
-                        "pays": "Italie",
-                        "championnat": "Serie A",
-                        "chapeau": 2,
-                        "logo": "Juventus_FC.png",
-                    },
-                },
-                "pot_3": {
-                    "home": {
-                        "nom": "Celtic",
-                        "pays": "Écosse",
-                        "championnat": "Scottish Premiership",
-                        "chapeau": 3,
-                        "logo": "Celtic_fc.png",
-                    },
-                    "away": {
-                        "nom": "PSV Eindhoven",
-                        "pays": "Pays-Bas",
-                        "championnat": "Eredivisie",
-                        "chapeau": 3,
-                        "logo": "psv_eindhoven.png",
-                    },
-                },
-                "pot_4": {
-                    "home": {
-                        "nom": "Sturm Graz",
-                        "pays": "Autriche",
-                        "championnat": "Bundesliga Autrichienne",
-                        "chapeau": 4,
-                        "logo": "SK_Sturm_Graz.png",
-                    },
-                    "away": {
-                        "nom": "Slovan Bratislava",
-                        "pays": "Slovaquie",
-                        "championnat": "Fortuna Liga",
-                        "chapeau": 4,
-                        "logo": "Slovan_Bratislava.png",
-                    },
-                },
-            },
-            "Bayern Munich": {
-                "pot_1": {
-                    "home": {
-                        "nom": "FC Barcelone",
-                        "pays": "Espagne",
-                        "championnat": "La Liga",
-                        "chapeau": 1,
-                        "logo": "Logo_FC_Barcelona.png",
-                    },
-                    "away": {
-                        "nom": "PSG",
-                        "pays": "France",
-                        "championnat": "Ligue 1",
-                        "chapeau": 1,
-                        "logo": "Paris_Saint-Germain.png",
-                    },
-                },
-                "pot_2": {
-                    "home": {
-                        "nom": "Benfica Lisbonne",
-                        "pays": "Portugal",
-                        "championnat": "Primeira Liga",
-                        "chapeau": 2,
-                        "logo": "SLB.png",
-                    },
-                    "away": {
-                        "nom": "Shakhtar Donetsk",
-                        "pays": "Ukraine",
-                        "championnat": "Premyer-Liha",
-                        "chapeau": 2,
-                        "logo": "FC_Shakhtar_Donetsk.png",
-                    },
-                },
-                "pot_3": {
-                    "home": {
-                        "nom": "Étoile Rouge de Belgrade",
-                        "pays": "Serbie",
-                        "championnat": "SuperLiga",
-                        "chapeau": 3,
-                        "logo": "crvena-zvezda.png",
-                    },
-                    "away": {
-                        "nom": "Feyenoord Rotterdam",
-                        "pays": "Pays-Bas",
-                        "championnat": "Eredivisie",
-                        "chapeau": 3,
-                        "logo": "Feyenoord_Rotterdam.png",
-                    },
-                },
-                "pot_4": {
-                    "home": {
-                        "nom": "Stade Brestois",
-                        "pays": "France",
-                        "championnat": "Ligue 1",
-                        "chapeau": 4,
-                        "logo": "SB29.png",
-                    },
-                    "away": {
-                        "nom": "Bologne",
-                        "pays": "Italie",
-                        "championnat": "Serie A",
-                        "chapeau": 4,
-                        "logo": "Bologna_FC.png",
-                    },
-                },
-            },
-            "Real Madrid": {
-                "pot_1": {
-                    "home": {
-                        "nom": "RB Leipzig",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 1,
-                        "logo": "RB_Leipzig.png",
-                    },
-                    "away": {
-                        "nom": "Liverpool",
-                        "pays": "Angleterre",
-                        "championnat": "Premier League",
-                        "chapeau": 1,
-                        "logo": "liverpool.png",
-                    },
-                },
-                "pot_2": {
-                    "home": {
-                        "nom": "Bayer Leverkusen",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 2,
-                        "logo": "Bayer_04_Leverkusen.png",
-                    },
-                    "away": {
-                        "nom": "Club Bruges",
-                        "pays": "Belgique",
-                        "championnat": "Jupiler Pro League",
-                        "chapeau": 2,
-                        "logo": "Club_Brugge.png",
-                    },
-                },
-                "pot_3": {
-                    "home": {
-                        "nom": "Lille",
-                        "pays": "France",
-                        "championnat": "Ligue 1",
-                        "chapeau": 3,
-                        "logo": "LOSC_Lille.png",
-                    },
-                    "away": {
-                        "nom": "Celtic",
-                        "pays": "Écosse",
-                        "championnat": "Scottish Premiership",
-                        "chapeau": 3,
-                        "logo": "Celtic_fc.png",
-                    },
-                },
-                "pot_4": {
-                    "home": {
-                        "nom": "Aston Villa",
-                        "pays": "Angleterre",
-                        "championnat": "Premier League",
-                        "chapeau": 4,
-                        "logo": "Aston_Villa.png",
-                    },
-                    "away": {
-                        "nom": "Sturm Graz",
-                        "pays": "Autriche",
-                        "championnat": "Bundesliga Autrichienne",
-                        "chapeau": 4,
-                        "logo": "SK_Sturm_Graz.png",
-                    },
-                },
-            },
-            "PSG": {
-                "pot_1": {
-                    "home": {
-                        "nom": "Bayern Munich",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 1,
-                        "logo": "bayern_munich.png",
-                    },
-                    "away": {
-                        "nom": "Manchester City",
-                        "pays": "Angleterre",
-                        "championnat": "Premier League",
-                        "chapeau": 1,
-                        "logo": "manchester-city.png",
-                    },
-                },
-                "pot_2": {
-                    "home": {
-                        "nom": "Atlético de Madrid",
-                        "pays": "Espagne",
-                        "championnat": "La Liga",
-                        "chapeau": 2,
-                        "logo": "Logo_Atletico.png",
-                    },
-                    "away": {
-                        "nom": "Bayer Leverkusen",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 2,
-                        "logo": "Bayer_04_Leverkusen.png",
-                    },
-                },
-                "pot_3": {
-                    "home": {
-                        "nom": "Dinamo Zagreb",
-                        "pays": "Croatie",
-                        "championnat": "Prva HNL",
-                        "chapeau": 3,
-                        "logo": "Dinamo_Zagreb.png",
-                    },
-                    "away": {
-                        "nom": "Étoile Rouge de Belgrade",
-                        "pays": "Serbie",
-                        "championnat": "SuperLiga",
-                        "chapeau": 3,
-                        "logo": "crvena-zvezda.png",
-                    },
-                },
-                "pot_4": {
-                    "home": {
-                        "nom": "Bologne",
-                        "pays": "Italie",
-                        "championnat": "Serie A",
-                        "chapeau": 4,
-                        "logo": "Bologna_FC.png",
-                    },
-                    "away": {
-                        "nom": "Stuttgart",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 4,
-                        "logo": "VfB_Stuttgart_1893.png",
-                    },
-                },
-            },
-            "Liverpool": {
-                "pot_1": {
-                    "home": {
-                        "nom": "Real Madrid",
-                        "pays": "Espagne",
-                        "championnat": "La Liga",
-                        "chapeau": 1,
-                        "logo": "Real_madrid.png",
-                    },
-                    "away": {
-                        "nom": "Borussia Dortmund",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 1,
-                        "logo": "Borussia_Dortmund.png",
-                    },
-                },
-                "pot_2": {
-                    "home": {
-                        "nom": "AC Milan",
-                        "pays": "Italie",
-                        "championnat": "Serie A",
-                        "chapeau": 2,
-                        "logo": "AC_Milan.png",
-                    },
-                    "away": {
-                        "nom": "Atlético de Madrid",
-                        "pays": "Espagne",
-                        "championnat": "La Liga",
-                        "chapeau": 2,
-                        "logo": "Logo_Atletico.png",
-                    },
-                },
-                "pot_3": {
-                    "home": {
-                        "nom": "PSV Eindhoven",
-                        "pays": "Pays-Bas",
-                        "championnat": "Eredivisie",
-                        "chapeau": 3,
-                        "logo": "psv_eindhoven.png",
-                    },
-                    "away": {
-                        "nom": "RB Salzbourg",
-                        "pays": "Autriche",
-                        "championnat": "Bundesliga Autrichienne",
-                        "chapeau": 3,
-                        "logo": "FC_Salzburg_logo.png",
-                    },
-                },
-                "pot_4": {
-                    "home": {
-                        "nom": "Stuttgart",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 4,
-                        "logo": "VfB_Stuttgart_1893.png",
-                    },
-                    "away": {
-                        "nom": "Gérone",
-                        "pays": "Espagne",
-                        "championnat": "La Liga",
-                        "chapeau": 4,
-                        "logo": "Logo_Girona_FC.png",
-                    },
-                },
-            },
-            "Inter Milan": {
-                "pot_1": {
-                    "home": {
-                        "nom": "Borussia Dortmund",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 1,
-                        "logo": "Borussia_Dortmund.png",
-                    },
-                    "away": {
-                        "nom": "RB Leipzig",
-                        "pays": "Allemagne",
-                        "championnat": "Bundesliga",
-                        "chapeau": 1,
-                        "logo": "RB_Leipzig.png",
-                    },
-                },
-                "pot_2": {
-                    "home": {
-                        "nom": "Shakhtar Donetsk",
-                        "pays": "Ukraine",
-                        "championnat": "Premyer-Liha",
-                        "chapeau": 2,
-                        "logo": "FC_Shakhtar_Donetsk.png",
-                    },
-                    "away": {
-                        "nom": "Arsenal",
-                        "pays": "Angleterre",
-                        "championnat": "Premier League",
-                        "chapeau": 2,
-                        "logo": "arsenal.png",
-                    },
-                },
-                "pot_3": {
-                    "home": {
-                        "nom": "Feyenoord Rotterdam",
-                        "pays": "Pays-Bas",
-                        "championnat": "Eredivisie",
-                        "chapeau": 3,
-                        "logo": "Feyenoord_Rotterdam.png",
-                    },
-                    "away": {
-                        "nom": "Young Boys",
-                        "pays": "Suisse",
-                        "championnat": "Super League",
-                        "chapeau": 3,
-                        "logo": "Young_Boys.png",
-                    },
-                },
-                "pot_4": {
-                    "home": {
-                        "nom": "Slovan Bratislava",
-                        "pays": "Slovaquie",
-                        "championnat": "Fortuna Liga",
-                        "chapeau": 4,
-                        "logo": "Slovan_Bratislava.png",
-                    },
-                    "away": {
-                        "nom": "AS Monaco",
-                        "pays": "France",
-                        "championnat": "Ligue 1",
-                        "chapeau": 4,
-                        "logo": "AS_Monaco.png",
-                    },
-                },
-            },
-        }
-
-        cell_w = 15
-        cell_h = 35
-        img_w = img_h = 15
-        img_x = 10
-        img_y = 40
-        e = 10
-        border = 1
+            raise Exception("cannot generate PDF from empty tirage")
 
         j = 0  # index of club
 
         for club, matches in self.tirages.items():
 
-            self.set_font("helvetica", "b", 15)
-
-            self.cell(0, e, club.upper(), border=border, ln=1)  # club
-
             i = 0  # index for image
+
+            if j % self.per_page == 0:
+                self.add_page(orientation="P", same=False)
+                self.set_text_color(r=255, g=255, b=255)
+                self.image(
+                    name=path("logos/bg.jpg"), x=0, y=0, w=self.w, h=self.h, type="jpg"
+                )
+                j = 0
+
+            if self.get_logo(name=club):
+                self.image(
+                    name=path(name=f"logos/{self.get_logo(name=club)}"),
+                    x=(self.w - self.img_w * 1.2) / 2,
+                    y=self.img_target_x
+                    + (self.img_h * 1.2 + self.e + self.cell_h - 10) * j,
+                    w=self.img_w * 1.2,
+                    h=self.img_h * 1.2,
+                    type="png",
+                )
+
+            self.ln(self.e)
+            self.set_font("helvetica", "b", 15)
+            self.cell(0, self.e, club.upper(), border=self.border, ln=1, align="C")
 
             for _, match in matches.items():
                 self.image(
                     name=path(name=f"logos/{match['home']['logo']}"),
-                    x=img_x + (img_w + e) * i,
-                    y=img_y + (cell_h + e) * j,
-                    w=img_w,
-                    h=img_h,
+                    x=self.img_x + (self.img_w + self.e) * i,
+                    y=self.img_y + (self.cell_h + self.e * 2) * j,
+                    w=self.img_w,
+                    h=self.img_h,
                     alt_text=match["home"]["nom"],
                     title=match["home"]["nom"],
                     type="png",
                 )  # image
 
                 if i != 0:
-                    self.cell(e, cell_h, "", border=border)
+                    self.cell(self.e, self.cell_h, "", border=self.border)
 
-                self.cell(cell_w, cell_h, "home", border=border, align="C")
+                self.cell(
+                    self.cell_w, self.cell_h, "home", border=self.border, align="C"
+                )
 
                 i += 1
 
                 self.image(
                     name=path(name=f"logos/{match['away']['logo']}"),
-                    x=img_x + (img_w + e) * i,
-                    y=img_y + (cell_h + e) * j,
-                    w=img_w,
-                    h=img_h,
+                    x=self.img_x + (self.img_w + self.e) * i,
+                    y=self.img_y + (self.cell_h + self.e * 2) * j,
+                    w=self.img_w,
+                    h=self.img_h,
                     type="png",
                     alt_text=match["home"]["nom"],
                     title=match["home"]["nom"],
                 )  # image
 
-                self.cell(e, cell_h, "", border=border)
+                self.cell(self.e, self.cell_h, "", border=self.border)
 
                 self.cell(
-                    cell_w,
-                    cell_h,
+                    self.cell_w,
+                    self.cell_h,
                     "away",
-                    border=border,
+                    border=self.border,
                     align="C",
                     ln=0 if i != 7 else 1,
                 )
