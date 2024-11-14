@@ -1,18 +1,30 @@
 from typing import List, Dict
 from backend.models.Pot import Pot
 from random import shuffle, randint
-from utils import HOME, AWAY
+from utils import HOME, AWAY, tirages_path_json
 from backend.models.Team import Team
 from backend.models.Pot import Pot
+import json
 
 
 class Draw:
     all = []
+    indexes = [[], []]
+    reset = False
 
     def __init__(self, pots: List[Pot]) -> None:
         self.__pots = pots
         self.__results = []
         self.noFree = []
+        self.__tirages = {}
+
+    @property
+    def tirages(self) -> dict:
+        return self.__tirages
+
+    @tirages.setter
+    def tirages(self, value: dict) -> None:
+        self.__tirages = value
 
     @property
     def results(self) -> list:
@@ -55,59 +67,123 @@ class Draw:
             Draw.all.append(team)
         return pots
 
-    def set_matches(self) -> None:
+    def launch_draw(self) -> None:
+        i = 0
         while len(Draw.all):
-            # get random pot
-            pot = self.pots[randint(0, len(self.pots) - 1)]
+
+            pot = self.pots[i]  # get pot
 
             shuffle(pot.teams)
 
-            for i, team in enumerate(
-                pot.teams, start=0
-            ):  # current team from current pot
-                for other_pot in self.pots:  # others pots include current pot
-                    teams_opp = [
-                        team_opp
-                        for team_opp in other_pot.teams
-                        if team_opp.country != team.country
-                    ]  # get all teams from current pot that championship not match with current team
+            for team in pot.teams:  # get team from current pot
 
-                    # shuffle list of teams opponents to get randow list
-                    shuffle(teams_opp)
+                for p in self.pots:
 
-                    # get needle from current team
-                    home, away = team.need(pot_id=other_pot.id)
+                    opp = list(
+                        filter(lambda t: t.championship != team.championship, p.teams)
+                    )  # get opponents from others championship
 
-                    # loop teams from current pot
-                    for t in teams_opp:
-                        if home and away:
+                    shuffle(opp)
+
+                    home, away = team.need_opponent_from_pot(pot_id=p.num)
+
+                    for opp_team in opp:
+
+                        if home == False and away == False:
                             break
-                        else:
-                            t_home, t_away = t.need(pot_id=team.pot)
+
+                        same_country = (
+                            team.get_country_from_same_club()
+                        )  # club from same country
+
+                        opp_country = team.get_opp_country(opp_team)
+
+                        if same_country != None:
                             if (
-                                not home
-                                and not t_away
-                                and team.accept(opp=t, where=HOME)
-                                and t.accept(opp=team, where=AWAY)
+                                same_country == opp_team.country
+                                or opp_country == opp_team.country
                             ):
-                                team.add(t=t, pot_id=t.pot, where=HOME)
-                                t.add(t=team, pot_id=team.pot, where=AWAY)
-                                home = True
-                            elif (
-                                not away
-                                and not t_home
-                                and team.accept(opp=t, where=AWAY)
-                                and t.accept(opp=team, where=HOME)
-                            ):
-                                team.add(t=t, pot_id=t.pot, where=AWAY)
-                                t.add(t=team, pot_id=team.pot, where=HOME)
-                                away = True
-                            else:
                                 continue
 
-                if len(team.tracking) == 8:
-                    self.results.append(team)
-                    self.removeTeam(team=team, teams=Draw.all)
+                        t_same_country = opp_team.get_country_from_same_club()
+                        t_opp_country = opp_team.get_opp_country(team)
+
+                        if t_same_country != None:
+                            if (
+                                t_same_country == team.country
+                                or t_opp_country == team.country
+                            ):
+                                continue
+
+                        t_home, t_away = opp_team.need_opponent_from_pot(
+                            pot_id=team.pot
+                        )
+
+                        if home and t_away:
+                            team.setMatch(t=opp_team, where=HOME)
+                            opp_team.setMatch(t=team, where=AWAY)
+                            home = False
+                        elif away and t_home:
+                            team.setMatch(t=opp_team, where=AWAY)
+                            opp_team.setMatch(t=team, where=HOME)
+                            away = False
+                        else:
+                            continue
+                if (
+                    len(team.matched + team.tracking) == 8
+                    and len(
+                        list(
+                            filter(
+                                lambda x: x["name"] == team.name, self.results.copy()
+                            )
+                        )
+                    )
+                    == 0
+                ):
+                    Draw.all = list(
+                        filter(lambda x: x.name != team.name, Draw.all.copy())
+                    )
+                    team.save()
+                    self.results.append(
+                        {
+                            "name": team.name,
+                            "trancking": len(team.tracking),
+                            "matches": team.matches,
+                        }
+                    )
+                    team.matched = []
+                    pot.remove(t=team)
+                else:
+                    print(
+                        "reset!",
+                        i,
+                        "tracking",
+                        len(team.tracking),
+                        "all",
+                        len(Draw.all),
+                    )
+                    team.reset()
+
+                    # Draw.reset = True
+                    break
+            i = randint(0, len(self.pots) - 1)
+            # pot.make_resume()
+
+    def set_matches(self) -> None:
+        while len(Draw.all):
+            self.launch_draw()
+
+    def resume(self, team: Team, size: int) -> None:
+        if (
+            len(team.tracking) == size
+            and len(list(filter(lambda x: x.name == team.name, self.results))) == 0
+        ):
+            self.results.append(team)
+        elif (
+            len(team.tracking) != size
+            and len(list(filter(lambda x: x.name == team.name, self.noFree))) == 0
+        ):
+            self.noFree.append(team)
 
     def removeTeam(self, team: Team, teams: list) -> None:
         for i, t in enumerate(teams):
@@ -129,12 +205,24 @@ class Draw:
                 count += 1
         return count > 0
 
-    # methods Objects
     def make_draw(self):
-        while self.mathes_not_complete():
-            self.set_matches()
-
+        self.launch_draw()
+        self.generate_tirages()
         print("finish!")
+
+    def generate_tirages(self):
+
+        # clean tirages
+        for club in self.results:
+            # tirages[club].pop(self.TRACKING)
+            self.tirages[club["name"]] = club["matches"]
+
+        # Serializing json
+        json_object = json.dumps(self.tirages, indent=4, ensure_ascii=False)
+
+        # Writing to sample.json
+        with open(tirages_path_json, "w", encoding="utf-8") as outfile:
+            outfile.write(json_object)
 
     def random_teams(self) -> None:
         for pot in self.pots:
