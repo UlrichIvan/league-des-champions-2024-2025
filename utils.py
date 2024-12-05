@@ -27,8 +27,4 @@ HOME = "home"
 AWAY = "away"
 
 
-class MatchKey(Enum):
-    pot_1 = "pot_1"
-    pot_2 = "pot_2"
-    pot_3 = "pot_3"
-    pot_4 = "pot_4"
+

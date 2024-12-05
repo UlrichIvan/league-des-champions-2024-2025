@@ -1,52 +1,33 @@
 from typing import Tuple
 from typing import Dict, List
-from utils import HOME, AWAY, MatchKey
+from utils import HOME, AWAY
 
 
 class Team:
     def __init__(
-        self, name: str, country: str, championship: str, pot: str, logo: str
+        self, name: str, country: str, championship: str, pot: int, logo: str
     ) -> None:
         self.__name = name
         self.__country = country
         self.__championship = championship
         self.__pot = pot
         self.__logo = logo
-        self.__tracking = []
-        self.__matches = {
-            "pot_1": {},
-            "pot_2": {},
-            "pot_3": {},
-            "pot_4": {},
+        self.__opponents = {
+            1: {"home": "", "away": ""},
+            2: {"home": "", "away": ""},
+            3: {"home": "", "away": ""},
+            4: {"home": "", "away": ""},
         }
-        self.__matched = []
 
-    # matched
+    # ========== properties =================
+
     @property
-    def matched(self) -> list:
-        return self.__matched
+    def opponents(self) -> dict:
+        return self.__opponents
 
-    @matched.setter
-    def matched(self, value: list) -> None:
-        self.__matched = value
-
-    # matches
-    @property
-    def matches(self) -> Dict[MatchKey, dict]:
-        return self.__matches
-
-    @matches.setter
-    def matches(self, value: Dict[MatchKey, dict]):
-        self.__matches = value
-
-    # tracking
-    @property
-    def tracking(self) -> list:
-        return self.__tracking
-
-    @tracking.setter
-    def tracking(self, value: list) -> None:
-        self.__tracking = value
+    @opponents.setter
+    def opponents(self, value: dict) -> None:
+        self.__opponents = value
 
     # name
     @property
@@ -77,7 +58,7 @@ class Team:
 
     # pot
     @property
-    def pot(self) -> str:
+    def pot(self) -> int:
         return self.__pot
 
     @pot.setter
@@ -95,6 +76,91 @@ class Team:
 
     def __str__(self) -> str:
         return f"name:{self.__name};country:{self.country};championship:{self.__championship};pot:{self.__pot};logo:{self.__logo}"
+
+    # ============= methods ================
+
+    def toJSON(self) -> dict:
+        return {
+            "name": self.name,
+            "country": self.country,
+            "championship": self.championship,
+            "pot": self.pot,
+            "logo": self.logo,
+        }
+
+    def addOpponent(self, opponent, to: str) -> None:
+        if not isinstance(opponent, Team) or to not in [HOME, AWAY]:
+            raise Exception("Invalid opponent!")
+        self.opponents[self.pot][to] = opponent
+
+    def taken(self, pot: int) -> bool:
+        return self.opponents[pot][AWAY]
+
+    def has(self, opponent, at: str) -> bool:
+        if not isinstance(opponent, Team) or at not in [HOME, AWAY]:
+            raise Exception("invalid opponent!")
+        opp = self.opponents[self.pot][at]
+        if opp and opp.name == opponent.name:
+            return True
+        else:
+            return False
+
+    def isEmpty(self) -> bool:
+        return len(self.tracking) == 0
+
+    def isAvailable(self, pot: int) -> bool:
+        if len(self.tracking) == 8:
+            return False
+        match = self.matches[pot]
+        return not (match["home"] and match["away"])
+
+    def getAvailablePlace(self, pot: int) -> str | None:
+
+        if len(self.tracking) == 8:
+            return None
+
+        match = self.matches[pot]
+        if match["home"] and match["away"]:
+            return None
+        return "home" if match["home"] else "away"
+
+    def _occurencesByContry(countries: list) -> dict:
+        count = {}
+        for country in countries:
+            if country in count.keys():
+                count[country] += 1
+            else:
+                count[country] = 1
+        return count
+
+    def teamIsAcceptable(self, team) -> bool:
+        if not isinstance(team, Team):
+            raise Exception("invalid opponent acceptable!")
+
+        if len(self.tracking) == 8:
+            return False
+
+        countries = list(map(lambda t: t.country, self.tracking.copy()))
+
+        count = len(list(map(lambda t: t == team.country, countries)))
+
+        max_occurence = max(
+            self._occurencesByContry().values() if self._occurencesByContry() else [0]
+        )
+
+        if team.country in countries:
+            if count > 1:
+                return False
+            elif count <= 1:
+                if max_occurence <= 1:
+                    return True
+                else:
+                    return False
+        else:
+            if max_occurence <= 1:
+                return True
+            else:
+                return False
 
     # methods
 
@@ -199,7 +265,7 @@ class Team:
 
         return country
 
-    def need_opponent_from_pot(self, pot_id: int) -> Tuple[bool, bool]:
+    def need_opponent_from_pot(self, pot_id: int) -> Tuple[str, str | None]:
 
         pot_name = f"pot_{pot_id}"
 
@@ -210,10 +276,10 @@ class Team:
             return False, False
 
         if len(keys) == 0:
-            return True, True
+            return HOME, AWAY
         elif (HOME in keys) and (AWAY in keys):
-            return False, False
+            return None, None
         elif (HOME in keys) and (AWAY not in keys):
-            return False, True
+            return None, AWAY
         elif (HOME not in keys) and (AWAY in keys):
-            return True, False
+            return HOME, None

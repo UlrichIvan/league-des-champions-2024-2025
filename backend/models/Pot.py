@@ -1,24 +1,33 @@
 from typing import List
 from backend.models.Team import Team
+from utils import HOME, AWAY
 
 
 class Pot:
     # instance attribute
     def __init__(self, id: str, teams: List[Team]) -> None:
-        self.num = id
+        self.id = id
         self.teams = teams
-        self.resumes = {}
 
-    def remove(self, t: Team) -> None:
-        for i, team in enumerate(self.teams):
-            if team.name == t.name:
-                self.teams.pop(i)
-                break
-
-    def make_resume(self) -> None:
+    def isCorrect(self) -> bool:
+        Done = True
         for team in self.teams:
-            count = len(team.tracking)
-            if count in self.resumes.keys():
-                self.resumes[count] += 1
-            else:
-                self.resumes[count] = 1
+            home = team.opponents[self.id][HOME]
+            away = team.opponents[self.id][AWAY]
+            if home == "" or away == "":
+                Done = False
+                print("failed pot : ", self.id, team.name)
+                break
+        return Done
+
+    def reset(self) -> None:
+        for team in self.teams:
+            team.opponents[self.id][HOME] = ""
+            team.opponents[self.id][AWAY] = ""
+
+    def toJSON(self) -> None:
+        for t in self.teams:
+            for _, opp in t.opponents.items():
+                if opp[HOME] and opp[AWAY]:
+                    opp[HOME] = opp[HOME].toJSON()
+                    opp[AWAY] = opp[AWAY].toJSON()
