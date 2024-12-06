@@ -114,11 +114,45 @@ class Draw:
 
                         if len(opponents):
                             opp = opponents[random.randint(0, len(opponents) - 1)]
-                            team.addOpponent(opponent=opp, to=HOME)
-                            opp.addOpponent(opponent=team, to=AWAY)
+                            team.addOpponent(opponent=opp, to=HOME, pot=opp.pot)
+                            opp.addOpponent(opponent=team, to=AWAY, pot=team.pot)
                         else:
                             pot.reset()
                             break
+
+        print("firts step done!")
+
+        print("next step begin!!!")
+
+        for i in range(0, 4):
+            pot = self.pots[i]
+            # current_pot=None
+            pots = list(filter(lambda e: e.id != pot.id, self.pots))
+            while not pot.isComplete():
+                for team in pot.teams:
+                    for p in pots:
+                        # get all clubs from differents countries that are free and not have current club as opponent in the same pot
+                        opponents = list(
+                            filter(
+                                lambda t: t.country != team.country
+                                and not t.taken(pot=pot.id)  # AWAY=""
+                                and not t.has(opponent=team, at=HOME)
+                                and t.validCondWith(opponent=team)
+                                and team.validCondWith(opponent=t),
+                                p.teams.copy(),
+                            )
+                        )
+
+                        if len(opponents):
+                            opp = opponents[random.randint(0, len(opponents) - 1)]
+                            team.addOpponent(opponent=opp, to=HOME, pot=opp.pot)
+                            opp.addOpponent(opponent=team, to=AWAY, pot=team.pot)
+                            continue
+                        else:
+                            pot.init()
+                            break
+
+        print("next done begin!!!")
 
     def make_draw(self):
         self.initDraw()

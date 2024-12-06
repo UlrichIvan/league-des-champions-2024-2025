@@ -20,6 +20,35 @@ class Pot:
                 break
         return Done
 
+    def resetAll(self, pot: int) -> None:
+        for team in self.teams:
+            opp = team.opponents[pot][HOME]
+            if opp:
+                opp.opponents[self.id][AWAY] = ""
+            team.opponents[pot][HOME] = ""
+
+    def init(self) -> bool:
+        for team in self.teams:
+            for id, opp in team.opponents.items():
+                if id != self.id:
+                    t = opp[HOME]
+                    if t:
+                        t.opponents[self.id][AWAY] = ""
+                    opp[HOME] = ""
+
+    def isComplete(self) -> bool:
+        Done = True
+        for team in self.teams:
+            for id, opp in team.opponents.items():
+                if id != self.id and opp[HOME] == "":
+                    Done = False
+                    print("failed", team.name)
+                    break
+
+        if not Done:
+            self.init()
+        return Done
+
     def reset(self) -> None:
         for team in self.teams:
             team.opponents[self.id][HOME] = ""

@@ -88,13 +88,53 @@ class Team:
             "logo": self.logo,
         }
 
-    def addOpponent(self, opponent, to: str) -> None:
+    def addOpponent(self, opponent, to: str, pot: int) -> None:
         if not isinstance(opponent, Team) or to not in [HOME, AWAY]:
             raise Exception("Invalid opponent!")
-        self.opponents[self.pot][to] = opponent
+        pot_id = pot if pot else self.pot
+        self.opponents[pot_id][to] = opponent
 
     def taken(self, pot: int) -> bool:
         return self.opponents[pot][AWAY]
+
+    def getOpponents(self) -> list:
+        data = list(self.opponents.values())
+        opponents = []
+        for el in data:
+            if el[HOME]:
+                opponents.append(el[HOME])
+            if el[AWAY]:
+                opponents.append(el[AWAY])
+
+    def validCondWith(self, opponent) -> bool:
+        if not isinstance(opponent, Team):
+            raise Exception("Invalid opponent!")
+
+        opponents = self.getOpponents() if self.getOpponents() else []
+
+        if len(opponents) == 8:
+            return False
+
+        if len(opponents) == 0:
+            return True
+
+        occurences = self._occurencesByContry(countries=opponents)
+
+        max_occurence = max(list(occurences.values()) if occurences else [0])
+
+        country = (
+            list(occurences.keys())[list(occurences.values()).index(max_occurence)]
+            if max_occurence > 0
+            else None
+        )
+
+        if max_occurence > 1:
+            if country == opponent.country:
+                return False
+            else:
+                return True
+        else:
+            return True
 
     def has(self, opponent, at: str) -> bool:
         if not isinstance(opponent, Team) or at not in [HOME, AWAY]:
@@ -126,11 +166,11 @@ class Team:
 
     def _occurencesByContry(countries: list) -> dict:
         count = {}
-        for country in countries:
-            if country in count.keys():
-                count[country] += 1
+        for team in countries:
+            if team.name in count.keys():
+                count[team.country] += 1
             else:
-                count[country] = 1
+                count[team.country] = 1
         return count
 
     def teamIsAcceptable(self, team) -> bool:
