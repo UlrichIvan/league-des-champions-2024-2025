@@ -10,24 +10,10 @@ import json
 class Draw:
     def __init__(self, pots: List[Pot]) -> None:
         self.__pots = pots
-        self.__results = []
         self.failed = 0
+        self.pot_pass = []
 
-    @property
-    def tirages(self) -> dict:
-        return self.__tirages
-
-    @tirages.setter
-    def tirages(self, value: dict) -> None:
-        self.__tirages = value
-
-    @property
-    def results(self) -> list:
-        return self.__results
-
-    @results.setter
-    def results(self) -> None:
-        raise Exception("unable to change results from draw")
+    # ============== properties ==============
 
     @property
     def pots(self) -> List[Pot]:
@@ -36,6 +22,8 @@ class Draw:
     @pots.setter
     def pots(self) -> None:
         raise Exception("unable to change pots from draw")
+
+    # ============== static methods ==============
 
     @staticmethod
     def get_list_of_pots(pots: Dict[int, List[Team]]) -> List[Pot]:
@@ -61,11 +49,16 @@ class Draw:
             pots[team.pot].append(team)
         return pots
 
+    # ============== methods of instances ==============
     def reset(self) -> None:
         for pot in self.pots:
             for team in pot.teams:
                 team.opponents[pot.id][HOME] = ""
                 team.opponents[pot.id][AWAY] = ""
+
+    def resetAll(self) -> None:
+        for pot in self.pots:
+            pot.resetComplete()
 
     def drawHasDone(self) -> bool:
         Done = True
@@ -81,12 +74,31 @@ class Draw:
 
         return Done
 
+    def drawComplete(self) -> bool:
+        Done = True
+        for pot in self.pots:
+            if not Done:
+                break
+            Done = pot.isRight()
+            if Done:
+                self.pot_pass.append(pot.id)
+        if not Done:
+            self.resetAll()
+            if self.failed > 0:
+                print("failed", self.failed + 1)
+                self.failed += 1
+        print(self.pot_pass)
+        self.pot_pass = []
+        return Done
+
     def getData(self) -> dict:
         data = {}
         for pot in self.pots:
-            pot.toJSON()
+            pot.resume()
+            pot.toDict()
             for team in pot.teams.copy():
                 data[team.name] = team.opponents
+                data[team.name]["resume"] = team.resumes
         return data
 
     def genrateJson(self) -> None:
@@ -96,7 +108,7 @@ class Draw:
             outfile.close()
         print("done!")
 
-    def initDraw(self) -> None:
+    def makeDrawOnSamePots(self) -> None:
         while not self.drawHasDone():
             for i in range(0, 4):
                 pot = self.pots[i]
@@ -106,54 +118,122 @@ class Draw:
                         opponents = list(
                             filter(
                                 lambda t: t.country != team.country
-                                and not t.taken(pot=pot.id)  # AWAY=""
+                                and not t.taken(pot=pot.id, to=HOME)  # AWAY=""
                                 and not t.has(opponent=team, at=HOME),
                                 pot.teams.copy(),
                             )
                         )
 
                         if len(opponents):
-                            opp = opponents[random.randint(0, len(opponents) - 1)]
+                            opp = random.choice(opponents)
                             team.addOpponent(opponent=opp, to=HOME, pot=opp.pot)
                             opp.addOpponent(opponent=team, to=AWAY, pot=team.pot)
                         else:
                             pot.reset()
                             break
+        print("step 1 done!")
 
-        print("firts step done!")
+    def makeDrawOnDifferentsPots(self, pot_active: Pot, pot_passive: Pot) -> None:
+        target = HOME
+        # while not pot_active.receiveOpponents(pot_passive=pot_passive):
+        for _, team_active in enumerate(pot_active.teams):
 
-        print("next step begin!!!")
+            opponents = list(
+                filter(
+                    lambda t: t.country != team_active.country
+                    and not t.taken(pot=pot_active.id, to=target)  # AWAY=""
+                    and not t.has(
+                        opponent=team_active,
+                        at=HOME if target == AWAY else AWAY,
+                    )
+                    and t.validCondWith(opponent=team_active)
+                    and team_active.validCondWith(opponent=t),
+                    pot_passive.teams,
+                )
+            )
 
-        for i in range(0, 4):
-            pot = self.pots[i]
-            # current_pot=None
-            pots = list(filter(lambda e: e.id != pot.id, self.pots))
-            while not pot.isComplete():
-                for team in pot.teams:
-                    for p in pots:
-                        # get all clubs from differents countries that are free and not have current club as opponent in the same pot
-                        opponents = list(
-                            filter(
-                                lambda t: t.country != team.country
-                                and not t.taken(pot=pot.id)  # AWAY=""
-                                and not t.has(opponent=team, at=HOME)
-                                and t.validCondWith(opponent=team)
-                                and team.validCondWith(opponent=t),
-                                p.teams.copy(),
-                            )
-                        )
+            if len(opponents):
+                opponent = random.choice(opponents)
+                team_active.addOpponent(
+                    opponent=opponent, to=target, pot=opponent.pot
+                )
+                opponent.addOpponent(
+                    opponent=team_active,
+                    to=HOME if target == AWAY else AWAY,
+                    pot=team_active.pot,
+                )
+                team_active.resume()
+                opponent.resume()
+                continue
+            else:
+                    break
+                    # pot_active.resetAllMatchAt(target=HOME, pot_id=pot_passive.id)
+                    # pot_passive.resetAllMatchAt(target=AWAY, pot_id=pot_active.id)
+                    # continue
+        pot_active.see.append(pot_passive.id)
+        pot_passive.see.append(pot_active.id)
 
-                        if len(opponents):
-                            opp = opponents[random.randint(0, len(opponents) - 1)]
-                            team.addOpponent(opponent=opp, to=HOME, pot=opp.pot)
-                            opp.addOpponent(opponent=team, to=AWAY, pot=team.pot)
-                            continue
-                        else:
-                            pot.init()
-                            break
+        # return True
 
-        print("next done begin!!!")
+    def completeDraw(self) -> None:
+        while not self.drawComplete():
+            for i in range(0, 4):
+                pot = self.pots[i]
+                pot.opponents = list(filter(lambda e: e.id != pot.id, self.pots))
+            # pot 1 and pot 2
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[0], pot_passive=self.pots[1]
+            )
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[1], pot_passive=self.pots[0]
+            )
+
+            # pot 3 and pot 4
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[2], pot_passive=self.pots[3]
+            )
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[3], pot_passive=self.pots[2]
+            )
+
+            # pot 2 and pot 3
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[1], pot_passive=self.pots[2]
+            )
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[2], pot_passive=self.pots[1]
+            )
+
+            # pot 1 and pot 3
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[0], pot_passive=self.pots[2]
+            )
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[2], pot_passive=self.pots[0]
+            )
+
+            # pot 4 and pot 1
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[1], pot_passive=self.pots[0]
+            )
+            self.makeDrawOnDifferentsPots(
+                pot_active=self.pots[0], pot_passive=self.pots[1]
+            )
+
+            # # pot 2 and pot 4
+            # self.makeDrawOnDifferentsPots(
+            #     pot_active=self.pots[1], pot_passive=self.pots[3]
+            # )
+            # self.makeDrawOnDifferentsPots(
+            #     pot_active=self.pots[3], pot_passive=self.pots[1]
+            # )
+
+            print("Done!")
 
     def make_draw(self):
-        self.initDraw()
+        # set opponents from each team on the same pot
+        # self.makeDrawOnSamePots()
+        # set opponents from each team provide from other pot
+        self.completeDraw()
+        # generate draw as json file
         self.genrateJson()
