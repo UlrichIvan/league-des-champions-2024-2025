@@ -9,8 +9,8 @@ class Pot:
         self.__id = id
         self.__teams = teams
         self.pots_failed = []
-        self.see=[]
-        self.opponents=[]
+        self.see = []
+        self.opponents = []
 
     # ============== properties ==============
 
@@ -72,15 +72,15 @@ class Pot:
                 opp.opponents[self.id][AWAY if target == HOME else HOME] = ""
             team.opponents[pot][target] = ""
 
-    def resetComplete(self) -> None:
+    def resetComplete(self, to: str) -> None:
         """reset all matches for all team of pot when draw failed on step two of draw"""
         for team in self.teams:
             for id, opp in team.opponents.items():
-                t = opp[HOME]
                 if id != self.id:
+                    t = opp[to]
                     if t:
-                        t.opponents[self.id][AWAY] = ""
-                    team.opponents[id][HOME] = ""
+                        t.opponents[self.id][AWAY if to == HOME else HOME] = ""
+                    team.opponents[id][to] = ""
 
     def resume(self) -> None:
         """resume occurence for each team in the pot on the second step of draw"""

@@ -18,6 +18,7 @@ class Team:
             3: {"home": "", "away": ""},
             4: {"home": "", "away": ""},
         }
+
         self.resumes = {}
 
     # ========== properties =================
@@ -84,14 +85,16 @@ class Team:
             "logo": self.logo,
         }
 
-    def addOpponent(self, opponent, to: str, pot: int) -> None:
+    def addOpponent(self, opponent, to: str, pot_id: int) -> None:
         if not isinstance(opponent, Team) or to not in [HOME, AWAY]:
             raise Exception("Invalid opponent!")
-        pot_id = pot if pot else self.pot
+        # add opponent found
         self.opponents[pot_id][to] = opponent
+        # add team as opponent
+        opponent.opponents[self.pot][HOME if to == AWAY else AWAY] = self
 
-    def taken(self, pot: int, to: str) -> bool:
-        return self.opponents[pot][HOME if to == AWAY else AWAY] != ""
+    def available(self, pot: int, to: str) -> bool:
+        return not isinstance(self.opponents[pot][to], Team)
 
     def getOpponents(self) -> list:
         data = list(self.opponents.values())
@@ -108,6 +111,13 @@ class Team:
         occurences = self._occurencesByContry(countries=opponents.copy())
         self.resumes = occurences
 
+    def resetAllMatches(self, target: str) -> None:
+        for pot_id, opp in self.opponents.items():
+            t = opp[target]
+            if t:
+                t.opponents[pot_id][AWAY if target == HOME else HOME] = ""
+            opp[target] = ""
+
     def reset(self) -> None:
         for pot_id, opp in self.opponents.items():
             if pot_id != self.pot and opp[HOME]:
@@ -116,7 +126,7 @@ class Team:
                     t.opponents[self.pot][AWAY] = ""
                 opp[HOME] = ""
 
-    def isComplete(self,target:str) -> bool:
+    def isComplete(self, target: str) -> bool:
         Done = True
         for pot_id, opp in self.opponents.items():
             if not Done:
@@ -129,7 +139,7 @@ class Team:
     def validCondWith(self, opponent) -> bool:
         if not isinstance(opponent, Team):
             raise Exception("Invalid opponent!")
-
+        Done = True
         opponents = self.getOpponents() if self.getOpponents() else []
 
         if len(opponents) == 8:
@@ -144,28 +154,18 @@ class Team:
 
         occurences = self._occurencesByContry(countries=data)
 
-        max_value = max(list(occurences.values()))
-        count = {}
+        for _, appear in occurences.items():
+            if appear > 2:
+                Done = False
+                break
 
-        for value in list(occurences.values()):
-            if value in count:
-                count[value] += 1
-            else:
-                count[value] = 1
+        return Done
 
-        if max_value <= 2:
-            if max_value == 1 or (max_value == 2 and count[max_value] == 1):
-                return True
-            else:
-                return False
-        else:
-            return False
-
-    def has(self, opponent, at: str) -> bool:
-        if not isinstance(opponent, Team) or at not in [HOME, AWAY]:
+    def know(self, opponent) -> bool:
+        if not isinstance(opponent, Team):
             raise Exception("invalid opponent!")
-        opp = self.opponents[self.pot][at]
-        if opp and opp.name == opponent.name:
+        opp = list(filter(lambda e: (e.name == opponent.name), self.getOpponents()))
+        if len(opp):
             return True
         else:
             return False
