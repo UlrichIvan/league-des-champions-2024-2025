@@ -146,11 +146,11 @@ class Draw:
         """
         data = {}
         for pot in self.pots:
-            pot.resume()
+            # pot.resume()
             pot.toDict()
             for team in pot.teams.copy():
                 data[team.name] = team.opponents
-                data[team.name]["resume"] = team.resumes
+                # data[team.name]["resume"] = team.resumes
         return data
 
     def __generate_json(self) -> None:
@@ -159,7 +159,7 @@ class Draw:
         with open(tirages_path_json, "w", encoding="utf-8") as outfile:
             outfile.write(data)
             outfile.close()
-        print("done!")
+        print("draw done successfully!")
 
     def __make_draw_on_same_pots(self) -> None:
         """make draw for between team on same pot"""
@@ -214,8 +214,8 @@ class Draw:
                     team_active.addOpponent(
                         opponent=opponent, to=HOME, pot_id=opponent.pot
                     )
-                    team_active.resume()
-                    opponent.resume()
+                    # team_active.resume()
+                    # opponent.resume()
                     continue
                 else:
                     pot_active.resetAllMatchAt(target=HOME, pot_id=pot_passive.id)
