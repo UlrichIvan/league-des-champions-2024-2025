@@ -84,20 +84,20 @@ class Draw:
         return pots
 
     # ============== methods of instances ==============
-    def reset(self) -> None:
+    def __reset(self) -> None:
         """reset all pots when draw lost on the first step"""
         for pot in self.pots:
             for team in pot.teams:
                 team.opponents[pot.id][HOME] = ""
                 team.opponents[pot.id][AWAY] = ""
 
-    def reset_all(self) -> None:
+    def __reset_all(self) -> None:
         """reset all pots when draw lost on the second step"""
         for pot in self.pots:
             pot.resetComplete(to=HOME)
             pot.resetComplete(to=AWAY)
 
-    def draw_init(self) -> bool:
+    def __draw_init(self) -> bool:
         """verify if draw is valid for first step(draw for into each pot properly)
 
         Returns:
@@ -112,11 +112,11 @@ class Draw:
             if self.failed > 0:
                 print("failed", self.failed + 1)
                 self.failed += 1
-                self.reset()
+                self.__reset()
 
         return Done
 
-    def draw_complete(self) -> bool:
+    def __draw_complete(self) -> bool:
         """verify if draw for the second step was done successfully
 
         Returns:
@@ -130,7 +130,7 @@ class Draw:
             if Done:
                 self.pot_pass.append(pot.id)
         if not Done:
-            self.reset_all()
+            self.__reset_all()
             if self.failed > 0:
                 print("failed", self.failed + 1)
                 self.failed += 1
@@ -138,7 +138,7 @@ class Draw:
         self.pot_pass = []
         return Done
 
-    def get_data(self) -> dict:
+    def __get_data(self) -> dict:
         """return dict after draw validate
 
         Returns:
@@ -153,17 +153,17 @@ class Draw:
                 data[team.name]["resume"] = team.resumes
         return data
 
-    def generate_json(self) -> None:
+    def __generate_json(self) -> None:
         """save json file for draw when draw is finish and ok"""
-        data = json.dumps(self.get_data(), indent=4, ensure_ascii=False)
+        data = json.dumps(self.__get_data(), indent=4, ensure_ascii=False)
         with open(tirages_path_json, "w", encoding="utf-8") as outfile:
             outfile.write(data)
             outfile.close()
         print("done!")
 
-    def make_draw_on_same_pots(self) -> None:
+    def __make_draw_on_same_pots(self) -> None:
         """make draw for between team on same pot"""
-        while not self.draw_init():
+        while not self.__draw_init():
             for i in range(0, 4):
                 pot = self.pots[i]
                 while not pot.isCorrect():
@@ -183,13 +183,12 @@ class Draw:
                         if len(opponents):
                             opp = random.choice(opponents)
                             team.addOpponent(opponent=opp, to=HOME, pot_id=opp.pot)
-                            # opp.addOpponent(opponent=team, to=AWAY, pot=team.pot)
                         else:
                             pot.reset()
                             break
         print("step 1 done!")
 
-    def make_draw_on_differents_pots(self, pot_active: Pot, pot_passive: Pot) -> None:
+    def __make_draw_on_differents_pots(self, pot_active: Pot, pot_passive: Pot) -> None:
         """complete opponents of team into active pot with team passive pot for HOME location
 
         Args:
@@ -223,17 +222,17 @@ class Draw:
                     pot_passive.resetAllMatchAt(target=AWAY, pot_id=pot_active.id)
                     break
 
-    def complete_draw(self) -> None:
+    def __complete_draw(self) -> None:
         """make draw between diffents pots to complete all matches"""
-        while not self.draw_complete():
+        while not self.__draw_complete():
             for i in range(0, 4):
                 pot = self.pots[i]
                 pot.opponents = list(filter(lambda e: e.id != pot.id, self.pots))
                 for opponent in pot.opponents:
-                    self.make_draw_on_differents_pots(
+                    self.__make_draw_on_differents_pots(
                         pot_active=pot, pot_passive=opponent
                     )
-                    self.make_draw_on_differents_pots(
+                    self.__make_draw_on_differents_pots(
                         pot_active=opponent, pot_passive=pot
                     )
 
@@ -242,8 +241,8 @@ class Draw:
     def make_draw(self):
         """make draw and create json file"""
         # set opponents from each team on the same pot
-        self.make_draw_on_same_pots()
+        self.__make_draw_on_same_pots()
         # set opponents from each team provide from other pot
-        self.complete_draw()
+        self.__complete_draw()
         # generate draw as json file
-        self.generate_json()
+        self.__generate_json()

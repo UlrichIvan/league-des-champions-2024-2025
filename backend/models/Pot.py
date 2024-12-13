@@ -8,11 +8,17 @@ class Pot:
     def __init__(self, id: str, teams: List[Team]) -> None:
         self.__id = id
         self.__teams = teams
-        self.pots_failed = []
-        self.see = []
-        self.opponents = []
+        self.__opponents = []
 
     # ============== properties ==============
+
+    @property
+    def opponents(self) -> list:
+        return self.__opponents
+
+    @opponents.setter
+    def opponents(self, value: list) -> None:
+        self.__opponents = value
 
     @property
     def teams(self) -> list:
@@ -45,6 +51,54 @@ class Pot:
                 print("failed pot : ", self.id, team.name)
                 break
         return Done
+
+    def reset(self) -> None:
+        """reset each team from current pot if draw false on step 1"""
+        for team in self.teams:
+            team.opponents[self.id][HOME] = ""
+            team.opponents[self.id][AWAY] = ""
+
+    def receiveOpponents(self, pot_passive) -> bool:
+        """verify that all team of current pot had been received oppponent
+        for paasive pot
+
+        Args:
+            pot_passive (Pot): pot target for current pot
+
+        Raises:
+            Exception: if pot_passive is not instance of class Pot
+
+        Returns:
+            bool: True if all team of current pot recived opponents form passive pot
+        """
+        if not isinstance(pot_passive, Pot):
+            raise Exception("invalid pot passive")
+        Done = True
+        for team in self.teams:
+            for pot_id, opp in team.opponents.items():
+                if not Done:
+                    break
+                if pot_id == pot_passive.id and opp[HOME] == "":
+                    Done = False
+                    break
+        if not Done:
+            self.resetAllMatchAt(target=HOME, pot_id=pot_passive.id)
+            pot_passive.resetAllMatchAt(target=AWAY, pot_id=self.id)
+        return Done
+
+    def resetAllMatchAt(self, target: str, pot_id: int) -> None:
+        """_reset all matches for current pot at target(HOME OR AWAY)
+        Args:
+            target (str): "home" or "where"
+            pot_id (int): number of pot
+
+        Raises:
+            Exception: if target or pot_id is not valid
+        """
+        if target not in [HOME, AWAY] or pot_id not in range(1, 5):
+            raise Exception("Invalid target or pot number")
+        for team in self.teams:
+            team.opponents[pot_id][target] = ""
 
     def isRight(self) -> bool:
         """
@@ -84,12 +138,6 @@ class Pot:
         for team in self.teams:
             team.resume()
 
-    def reset(self) -> None:
-        """reset each team from current pot if draw false on step 1"""
-        for team in self.teams:
-            team.opponents[self.id][HOME] = ""
-            team.opponents[self.id][AWAY] = ""
-
     def toDict(self) -> None:
         """transform each opponents from each team to dict formmat for json format"""
         for t in self.teams:
@@ -97,45 +145,3 @@ class Pot:
                 if opp[HOME] and opp[AWAY]:
                     opp[HOME] = opp[HOME].toDict()
                     opp[AWAY] = opp[AWAY].toDict()
-
-    def resetAllMatchAt(self, target: str, pot_id: int) -> None:
-        """_reset all matches for current pot at target(HOME OR AWAY)
-        Args:
-            target (str): "home" or "where"
-            pot_id (int): number of pot
-
-        Raises:
-            Exception: if target or pot_id is not valid
-        """
-        if target not in [HOME, AWAY] or pot_id not in range(1, 5):
-            raise Exception("Invalid target or pot number")
-        for team in self.teams:
-            team.opponents[pot_id][target] = ""
-
-    def receiveOpponents(self, pot_passive) -> bool:
-        """verify that all team of current pot had been received oppponent
-        for paasive pot
-
-        Args:
-            pot_passive (Pot): pot target for current pot
-
-        Raises:
-            Exception: if pot_passive is not instance of class Pot
-
-        Returns:
-            bool: True if all team of current pot recived opponents form passive pot
-        """
-        if not isinstance(pot_passive, Pot):
-            raise Exception("invalid pot passive")
-        Done = True
-        for team in self.teams:
-            for pot_id, opp in team.opponents.items():
-                if not Done:
-                    break
-                if pot_id == pot_passive.id and opp[HOME] == "":
-                    Done = False
-                    break
-        if not Done:
-            self.resetAllMatchAt(target=HOME, pot_id=pot_passive.id)
-            pot_passive.resetAllMatchAt(target=AWAY, pot_id=self.id)
-        return Done

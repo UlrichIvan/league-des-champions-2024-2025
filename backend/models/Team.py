@@ -1,5 +1,3 @@
-from typing import Tuple
-from typing import Dict, List
 from utils import HOME, AWAY
 
 
@@ -129,7 +127,7 @@ class Team:
             raise Exception("Invalid pot id or match location!")
         return not isinstance(self.opponents[pot_id][to], Team)
 
-    def getOpponents(self) -> list:
+    def __getOpponents(self) -> list:
         """return opponents for current team
 
         Returns:
@@ -146,8 +144,8 @@ class Team:
 
     def resume(self) -> None:
         """set occurences of opponents for current team"""
-        opponents = self.getOpponents() if self.getOpponents() else []
-        occurences = self._occurencesByContry(opponents=opponents.copy())
+        opponents = self.__getOpponents() if self.__getOpponents() else []
+        occurences = self.__occurencesByContry(opponents=opponents.copy())
         self.resumes = occurences
 
     def validCondWith(self, opponent) -> bool:
@@ -165,7 +163,7 @@ class Team:
         if not isinstance(opponent, Team):
             raise Exception("Invalid opponent!")
         Done = True
-        opponents = self.getOpponents() if self.getOpponents() else []
+        opponents = self.__getOpponents() if self.__getOpponents() else []
 
         if len(opponents) == 8:
             return False
@@ -177,7 +175,7 @@ class Team:
 
         data.append(opponent)
 
-        occurences = self._occurencesByContry(opponents=data)
+        occurences = self.__occurencesByContry(opponents=data)
 
         for _, appear in occurences.items():
             if appear > 2:
@@ -187,7 +185,7 @@ class Team:
         return Done
 
     def know(self, opponent) -> bool:
-        """verify if current team had already meet current opponent  
+        """verify if current team had already meet current opponent
 
         Args:
             opponent (Team): current opponent
@@ -201,13 +199,13 @@ class Team:
         """
         if not isinstance(opponent, Team):
             raise Exception("invalid opponent!")
-        opp = list(filter(lambda e: (e.name == opponent.name), self.getOpponents()))
+        opp = list(filter(lambda e: (e.name == opponent.name), self.__getOpponents()))
         if len(opp):
             return True
         else:
             return False
 
-    def _occurencesByContry(self, opponents: list) -> dict:
+    def __occurencesByContry(self, opponents: list) -> dict:
         """return occurences of countries for opponents of current team
 
         Args:
