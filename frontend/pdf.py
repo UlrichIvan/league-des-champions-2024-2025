@@ -231,7 +231,7 @@ class PDF(FPDF):
         self.cell(
             0,
             0,
-            f"made with love by :".capitalize() + "Ulrich/Amine/Alain",
+            f"made with love by : ".capitalize() + "Ulrich",
             align="C",
             ln=1,
         )
