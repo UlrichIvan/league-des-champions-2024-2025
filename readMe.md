@@ -1,4 +1,8 @@
+# Exemple de résultat des matchs de la champion league après le tirage aléatoire
+![league_des_champions](https://github.com/user-attachments/assets/1dfbbda6-df37-482b-9601-25b7da3ea446)
+
 # Consignes du tirage
+
 
 Les équipes sont répartis en 4 chapeaux de 9 équipes.<br>
 Chaque équipe :
