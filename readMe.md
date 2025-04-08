@@ -66,7 +66,7 @@ si vous utilisez un editeur de code comme vscode vous pouvez vous placez dans le
 
 6. ## Comprendre le principe de generation de la maquette
 
-   Si vous voulez comprendre le principe du tirage, vous pouvez dans le dossier `data` ouvrir le fichier `images/skeleton_model_pdf.png`
+   Si vous voulez comprendre le principe de génération de la maquette, vous pouvez dans le dossier `data` ouvrir le fichier `images/skeleton_model_pdf.png`
 
 7. ## Comprendre le principe pour générer le tirage<br>
    Si vous voulez comprendre le principe du code ou si vous avez des questions, vous pouvez me contactez directement sur [LinkedIn](https://www.linkedin.com/in/ulrich-chokomeny/).
